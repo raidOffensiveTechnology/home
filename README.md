@@ -10,3 +10,10 @@ Welcome to the raidOT homepage!
 - We believe it is wrong to hack with the intention of monetary gain
 - We believe it is wrong for a company/organization to keep originally free software behind a paywall
 - We believe it is an obligation to give credit where credit is due
+
+## Our Meetings
+We hold our meetings at the Stem Center (Projector Room) at 15:00 every Thursday.
+
+## What we teach
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='GNUbash' src='https://img.shields.io/badge/Bash-100000?style=for-the-badge&logo=GNUbash&logoColor=white&labelColor=black&color=black'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Python' src='https://img.shields.io/badge/Python-100000?style=for-the-badge&logo=Python&logoColor=white&labelColor=black&color=black'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='HTML5' src='https://img.shields.io/badge/HTML-100000?style=for-the-badge&logo=HTML5&logoColor=white&labelColor=black&color=black'/></a> <a href='https://github.com/shivamkapasia0' target="_blank"><img alt='CSS3' src='https://img.shields.io/badge/Css-100000?style=for-the-badge&logo=CSS3&logoColor=white&labelColor=black&color=black'/></a>
+
