@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/69230350?v=4">
+      <title>Hacker theme (thelearn-tech)</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer=""></script>
+      <!-- Version 1.0.1-->
+   </head>
+   <body>
+     <style media="screen">
+       .cd{
+         text-align: center;
+         font-size: 60px;
+         font-weight: bold;
+         padding: 20px;
+         border: 2px solid gray; /* Adding border to the items */
+         margin: 10px;
+       }
+       .badge {
+           display: inline-block;
+           margin: 10px;
+           padding: 5px 10px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           text-align: center;
+       }
+       .badge img {
+           max-width: 40px;
+           padding-top: 5px;
+           vertical-align: middle;
+           margin-right: 5px;
+       }
+       .badges{
+         height: 100%;
+         margin: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: white;
+       }
+       .disclaimer{
+         text-align: center;
+         font-size: 60px;
+         font-weight: bold;
+         padding: 20px;
+         border: 2px solid gray; /* Adding border to the items */
+         margin: 10px;
+       }
+     </style>
+      <h2></h2>
+      <!-- heading 1 -->
+      <h1 class="bold topp left" > $ ./raidOT.sh</h1>
+      <h2></h2>
+      <!-- gray text --->
+      <l class="gray left" >lgb hacking club home page</l>
+      <p><a href="https://github.com/raid_o_t" title="jekyll-hacker-theme" target="_blank" class="linkk bold">instagram</a></p>
+
+
+      <!-- horizontal rule-->
+      <hr class="hr">
+      <!-- paragraph -->
+
+
+
+      <h1 class="left topp">Introduction</h1>
+      <p>
+         raidOT is the only LGB hacking club. We cover all sorts of topics relating to computer-science and cybersecurity. Want to learn how to crack an old password, come to us. Want to learn how to defend yourself from the dangers of the dark web, come to us. Want to learn the skills you can leverage in a computer-science based career? Come to us.
+      </p>
+
+      <h1 class="left topp">Our morals</h1>
+      <ul>
+        <li>We believe that disclosing weaknesses in a system is a must to help improve the system itself</li>
+        <li>We believe it is wrong to hack with the intention of monetary gain</li>
+        <li>We believe it is wrong for a company/organization to keep originally free software behind a paywall</li>
+        <li>We believe it is an obligation to give credit where credit is due</li>
+      </ul>
+
+
+
+
+      <h1 class="left topp">Content</h1>
+      <div class="badges">
+        <div class="badge">
+            <img src="https://cdn.simpleicons.org/linux/white" alt="Linux">
+            Linux
+        </div>
+        <div class="badge">
+            <img src="https://cdn.simpleicons.org/python/white" alt="Python">
+            Python
+        </div>
+        <div class="badge">
+            <img src="https://cdn.simpleicons.org/windows/white" alt="Windows">
+            Windows
+        </div>
+        <div class="badge">
+            <img src="https://cdn.simpleicons.org/gnometerminal/white" alt="Bash">
+            Bash
+        </div>
+        <div class="badge">
+            More?
+        </div>
+      </div>
+
+
+      <h1 class="left topp">Meetings</h1>
+      <p>We hold meetings every Thursday, 15:00 at the Stem Center in the Projector room.</p>
+      <div class="cd">
+        <p>Countdown to next meeting:</p>
+        <p id="demo" style="font-size: 24px;"></p>
+      </div>
+
+
+
+      <script>
+      function updateCountdown() {
+        var now = new Date(); // Get current date and time
+        var countdownDate = new Date(now); // Create a new date object
+
+        // Calculate days until next Thursday
+        var daysUntilThursday = (11 - now.getDay() + 7) % 7; // Calculate days until next Thursday
+
+        // Set countdownDate to next Thursday at 15:00 Zurich time
+        countdownDate.setDate(now.getDate() + daysUntilThursday);
+        countdownDate.setHours(15);
+        countdownDate.setMinutes(0);
+        countdownDate.setSeconds(0);
+
+        var distance = countdownDate - now; // Calculate time difference
+
+        // If it's Thursday at 15:00 Zurich time, display "meeting time"
+        if (daysUntilThursday === 0 && now.getHours() === 15) {
+          document.getElementById("demo").innerHTML = "MEETING TIME!";
+          setTimeout(updateCountdown, 3600000); // Reset the countdown after an hour (3600000 ms)
+          return;
+        }
+
+        // If the countdown date has passed for the current week, set it to next week's Thursday
+        if (distance < 0) {
+          countdownDate.setDate(countdownDate.getDate() + 7);
+          distance = countdownDate - now; // Recalculate time difference
+        }
+
+        // Time calculations for days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the countdown
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      }
+
+      // Initial call to update the countdown
+      updateCountdown();
+      setInterval(updateCountdown, 1000); // Update every second
+      </script>
+      <div class="disclaimer">
+        <h6>DISCLAIMER: This organization is dedicated to providing information and resources related to hacking, including tools and techniques that may be used for security testing and research purposes only. It is important to note that the tools and techniques discussed on this organization can be used for illegal activities and therefore, should only be used ethically and with the explicit permission of the target system owner. We do not condone any illegal activities and will not be held responsible for any misuse of the information provided on this organization. We strongly advise that you use your knowledge and skills for lawful purposes only and abide by all applicable laws and regulations. By accessing and using this organization, you agree to be bound by these terms and conditions.</h6>
+      </div>
+
+
+   </div>
+</body>
+</html>
