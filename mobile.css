@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Spleen'; /* Font name you'll use in your styles */
+    src: url('spleen.otf') format('opentype'); /* Replace with correct path */
+    /* You can also include other font formats like woff or woff2 for better browser support */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spleen';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.wrapper {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #333333;
+}
