@@ -1,9 +1,9 @@
 /* version 1.0.1 */
 
-* {
-    font-family: 'Spleen'; /* Font name you'll use in your styles */
-    src: url('spleen.otf') format('opentype'); /* Replace with correct path */
-    /* You can also include other font formats like woff or woff2 for better browser support */
+@font-face {
+  font-family: 'Spleen';
+  src: url('spleen.otf') format('opentype'); /* Replace with correct paths for other formats */
+  /* Add additional font formats (e.g., woff, woff2) for better browser support */
 }
 
 body {
