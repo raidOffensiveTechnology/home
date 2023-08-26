@@ -1,6 +1,6 @@
 /* version 1.0.1 */
 
-@font-face {
+* {
     font-family: 'Spleen'; /* Font name you'll use in your styles */
     src: url('spleen.otf') format('opentype'); /* Replace with correct path */
     /* You can also include other font formats like woff or woff2 for better browser support */
@@ -131,4 +131,9 @@ ol {display: table; margin-left: 0; margin-right: auto; list-style-position: ins
   padding: 20px;
   border: 2px solid gray; /* Adding border to the items */
   margin: 10px;
+}
+
+
+* {
+  font-family: 'Spleen';
 }
