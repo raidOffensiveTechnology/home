@@ -1,15 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mobile.css">
-    <title>raidOT</title>
-</head>
-<body>
-    <div class="wrapper">
-        <h1>raidOT Mobile Page</h1>
-        <p>Please access this page on a computer, you'll need it to hack anyways.</p>
-    </div>
+
+
+
+<!doctype html>
+<html>
+   <head>
+      <link rel="icon" href="https://avatars.githubusercontent.com/u/69230350?v=4">
+      <title>raidOT</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets/css/main.css">
+      <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer=""></script>
+      <!-- Version 1.0.1-->
+   </head>
+   <body>
+      <h2></h2>
+      <!-- heading 1 -->
+      <h1 class="bold topp left" > $ ./raidOT.sh</h1>
+      <h2></h2>
+      <!-- gray text --->
+      <l class="gray left" >lgb hacking club mobile page</l>
+      <p><a href="https://instagram.com/raid_o_t" title="jekyll-hacker-theme" target="_blank" class="linkk bold">instagram</a></p>
+      <!-- horizontal rule-->
+      <hr class="hr">
+      <!-- paragraph -->
+
+
+
+      <h1 class="left topp">Introduction</h1>
+      <p>
+         Welcome to the mobile page of the raidOT hacking club. To access all of our information, please access this page on your computer.
+      </p>
+      <div class="cd">
+        <p>Countdown to next meeting:</p>
+        <p id="demo" style="font-size: 24px;"></p>
+      </div>
+      <script>
+      function updateCountdown() {
+        var now = new Date(); // Get current date and time
+        var countdownDate = new Date(now); // Create a new date object
+
+        // Calculate days until next Thursday
+        var daysUntilThursday = (11 - now.getDay() + 7) % 7; // Calculate days until next Thursday
+
+        // Set countdownDate to next Thursday at 15:00 Zurich time
+        countdownDate.setDate(now.getDate() + daysUntilThursday);
+        countdownDate.setHours(15);
+        countdownDate.setMinutes(0);
+        countdownDate.setSeconds(0);
+
+        var distance = countdownDate - now; // Calculate time difference
+
+        // If it's Thursday at 15:00 Zurich time, display "meeting time"
+        if (daysUntilThursday === 0 && now.getHours() === 15) {
+          document.getElementById("demo").innerHTML = "MEETING TIME!";
+          setTimeout(updateCountdown, 3600000); // Reset the countdown after an hour (3600000 ms)
+          return;
+        }
+
+        // If the countdown date has passed for the current week, set it to next week's Thursday
+        if (distance < 0) {
+          countdownDate.setDate(countdownDate.getDate() + 7);
+          distance = countdownDate - now; // Recalculate time difference
+        }
+
+        // Time calculations for days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the countdown
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      }
+
+      // Initial call to update the countdown
+      updateCountdown();
+      setInterval(updateCountdown, 1000); // Update every second
+      </script>
 </body>
 </html>
