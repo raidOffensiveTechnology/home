@@ -167,51 +167,52 @@ target="_blank" class="linkk bold">instagram</a></p>
         <p id="demo" style="font-size: 24px;"></p>
       </div>
 
-
-
       <script>
-      function updateCountdown() {
-        var now = new Date(); // Get current date and time
-        var countdownDate = new Date(now); // Create a new date object
+function updateCountdown() {
+  // Get the current date in Zurich time
+  var now = new Date();
+  var nowZurich = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Zurich" }));
 
-        // Calculate days until next Thursday
-        var daysUntilThursday = (11 - now.getDay() + 7) % 7; // Calculate days until next Thursday
+  // Calculate the next Tuesday and Thursday at 15:00 Zurich time
+  var nextTuesday = new Date(nowZurich);
+  nextTuesday.setDate(nowZurich.getDate() + ((2 + 7 - nowZurich.getDay()) % 7));
+  nextTuesday.setHours(15, 0, 0, 0);
 
-        // Set countdownDate to next Thursday at 15:00 Zurich time
-        countdownDate.setDate(now.getDate() + daysUntilThursday);
-        countdownDate.setHours(15);
-        countdownDate.setMinutes(0);
-        countdownDate.setSeconds(0);
+  var nextThursday = new Date(nextTuesday);
+  nextThursday.setDate(nextTuesday.getDate() + 2);
 
-        var distance = countdownDate - now; // Calculate time difference
+  // Calculate the time remaining until the next event
+  var distanceToNextEvent = nextTuesday - nowZurich;
 
-        // If it's Thursday at 15:00 Zurich time, display "meeting time"
-        if (daysUntilThursday === 0 && now.getHours() === 15) {
-          document.getElementById("demo").innerHTML = "MEETING TIME!";
-          setTimeout(updateCountdown, 3600000); // Reset the countdown after an hour (3600000 ms)
-          return;
-        }
+  // If it's Tuesday and the time is between 15:00 and 16:00
+  if (nowZurich.getDay() === 2 && nowZurich.getHours() === 15) {
+    document.getElementById("demo").innerHTML = "Meeting time";
+    setTimeout(updateCountdown, 3600000); // Continue for an hour
+  }
+  // If it's Thursday and the time is between 15:00 and 16:00
+  else if (nowZurich.getDay() === 4 && nowZurich.getHours() === 15) {
+    document.getElementById("demo").innerHTML = "Meeting time";
+    setTimeout(updateCountdown, 3600000); // Continue for an hour
+  }
+  // Countdown to the next Tuesday at 15:00
+  else {
+    var days = Math.floor(distanceToNextEvent / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distanceToNextEvent % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distanceToNextEvent % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distanceToNextEvent % (1000 * 60)) / 1000);
 
-        // If the countdown date has passed for the current week, set it to next week's Thursday
-        if (distance < 0) {
-          countdownDate.setDate(countdownDate.getDate() + 7);
-          distance = countdownDate - now; // Recalculate time difference
-        }
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
 
-        // Time calculations for days, hours, minutes, and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    setTimeout(updateCountdown, 1000);
+  }
+}
 
-        // Output the countdown
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-      }
+// Start the countdown
+updateCountdown();
+</script>
 
-      // Initial call to update the countdown
-      updateCountdown();
-      setInterval(updateCountdown, 1000); // Update every second
-      </script>
+
       <div class="disclaimer">
         <p>DISCLAIMER: This organization is dedicated to providing information and resources related to hacking, including tools and techniques that may be used for security testing and research purposes only. It is important to note that the tools and techniques discussed on this organization can be used for illegal activities and therefore, should only be used ethically and with the explicit permission of the target system owner. We do not condone any illegal activities and will not be held responsible for any misuse of the information provided on this organization. We strongly advise that you use your knowledge and skills for lawful purposes only and abide by all applicable laws and regulations. By accessing and using this organization, you agree to be bound by these terms and conditions.</p>
       </div>
