@@ -160,58 +160,27 @@ target="_blank" class="linkk bold">instagram</a></p>
         </div>
       </div>
 
+      <h1 class="left topp">Recommended Content</h1>
+      <p>Here is some amazing content to get you started in your cybersecurity and hacking experience:</p>
+      <ul>
+        <li>Darknet Diaries [Podcast]</li>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1Y7GAxsfHtZkA50jiqNcrYYfZkzvEW1XN/view">Samy</a></li>
+          <li><a href="https://drive.google.com/file/d/1Hm0BCRWXtT5RGgPViKLOKib9YviSfsjt/view">Shadow Brokers</a></li>
+          <li><a href="https://drive.google.com/file/d/1F56QzWk72wSUv7Yct3y1903PDFblGwdi/view">The Pirate Bay</a></li>
+          <li><a href="https://drive.google.com/file/d/1wQKkWoZS92IrxvdFmk622p0HWpWsuP10/view">WannaCry</a></li>
+        </ul>
+        <li>Videos</li>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/16gBDMMeKvDeOjZlCdHmIIBMB0cuDTA7P/view">Computer Networking in 100 Seconds</a></li>
+          <li><a href="https://drive.google.com/file/d/1fxhFPvV_pbtUy3L-aeYvaPyrMvC8CG3g/view">Why so many distros? The Weird History of Linuux</a></li>
+          <li><a href="https://drive.google.com/file/d/1LNBRazQUY4PvapL5o2rmlwOAKNbjjwOD/view">Bash in 100 Seconds</a></li>
+        </ul>
+      </ul>
 
       <h1 class="left topp">Meetings</h1>
-      <p>We hold meetings every Tuesdays and Thursdays, 15:00 at the Stem Center in the Projector room.</p>
-      <div class="cd">
-        <p>Countdown to next meeting:</p>
-        <p id="demo" style="font-size: 24px;"></p>
-      </div>
+      <p class="centert" style="font-size: 20px;" >We hold meetings every Tuesdays and Thursdays, 15:00 at the Stem Center in the Projector room.</p>
 
-      <script>
-function updateCountdown() {
-  // Get the current date in Zurich time
-  var now = new Date();
-  var nowZurich = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Zurich" }));
-
-  // Calculate the next Tuesday and Thursday at 15:00 Zurich time
-  var nextTuesday = new Date(nowZurich);
-  nextTuesday.setDate(nowZurich.getDate() + ((2 + 7 - nowZurich.getDay()) % 7));
-  nextTuesday.setHours(15, 0, 0, 0);
-
-  var nextThursday = new Date(nextTuesday);
-  nextThursday.setDate(nextTuesday.getDate() + 2);
-
-  // Calculate the time remaining until the next event
-  var distanceToNextEvent = nextTuesday - nowZurich;
-
-  // If it's Tuesday and the time is between 15:00 and 16:00
-  if (nowZurich.getDay() === 2 && nowZurich.getHours() === 15) {
-    document.getElementById("demo").innerHTML = "Meeting time";
-    setTimeout(updateCountdown, 3600000); // Continue for an hour
-  }
-  // If it's Thursday and the time is between 15:00 and 16:00
-  else if (nowZurich.getDay() === 4 && nowZurich.getHours() === 15) {
-    document.getElementById("demo").innerHTML = "Meeting time";
-    setTimeout(updateCountdown, 3600000); // Continue for an hour
-  }
-  // Countdown to the next Tuesday at 15:00
-  else {
-    var days = Math.floor(distanceToNextEvent / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distanceToNextEvent % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distanceToNextEvent % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distanceToNextEvent % (1000 * 60)) / 1000);
-
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-
-    setTimeout(updateCountdown, 1000);
-  }
-}
-
-// Start the countdown
-updateCountdown();
-</script>
 
 
       <div class="disclaimer">

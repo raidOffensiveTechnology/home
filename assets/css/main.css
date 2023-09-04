@@ -131,9 +131,15 @@ ol {display: table; margin-left: 0; margin-right: auto; list-style-position: ins
   padding: 20px;
   border: 2px solid gray; /* Adding border to the items */
   margin: 10px;
+  color: white;
 }
 
 
 * {
   font-family: 'Spleen';
+}
+
+
+a {
+  color: #44fc07;
 }
